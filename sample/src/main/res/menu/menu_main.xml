@@ -73,4 +73,9 @@
         android:title="ContentViewActivity"
         app:showAsAction="never"/>
 
+    <item
+        android:id="@+id/DataBindingActivity"
+        android:title="DataBindingActivity"
+        app:showAsAction="never"/>
+
 </menu>

@@ -23,6 +23,7 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import me.drakeet.multitype.sample.bilibili.BilibiliActivity
 import me.drakeet.multitype.sample.communication.CommunicateWithBinderActivity
+import me.drakeet.multitype.sample.databinding.DatabindingActivity
 import me.drakeet.multitype.sample.more.MoreApisPlayground
 import me.drakeet.multitype.sample.normal.NormalActivity
 import me.drakeet.multitype.sample.one2many.OneDataToManyActivity
@@ -54,6 +55,7 @@ open class MenuBaseActivity : AppCompatActivity() {
       R.id.TestPayloadActivity -> intent.setClass(this, TestPayloadActivity::class.java)
       R.id.MoreApisPlayground -> intent.setClass(this, MoreApisPlayground::class.java)
       R.id.ContentViewActivity -> intent.setClass(this, ContentViewActivity::class.java)
+      R.id.DataBindingActivity -> intent.setClass(this, DatabindingActivity::class.java)
       else -> return false
     }
     startActivity(intent)
