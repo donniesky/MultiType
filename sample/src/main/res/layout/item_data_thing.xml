@@ -6,7 +6,7 @@
     <data>
         <variable
             name="thing"
-            type="me.drakeet.multitype.sample.databinding.Thing"/>
+            type="com.drakeet.multitype.sample.databinding.Thing"/>
     </data>
 
     <LinearLayout

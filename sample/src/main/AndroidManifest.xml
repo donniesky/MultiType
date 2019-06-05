@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="me.drakeet.multitype.sample">
+    package="com.drakeet.multitype.sample">
 
     <application
         android:allowBackup="true"
@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup, GoogleAppIndexingWarning">
-        <activity android:name=".databinding.DatabindingActivity"></activity>
+        <activity android:name=".databinding.DatabindingActivity"/>
         <activity android:name=".bilibili.BilibiliActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,7 +25,6 @@
         <activity android:name=".one2many.OneDataToManyActivity" />
         <activity android:name=".payload.TestPayloadActivity" />
         <activity android:name=".more.MoreApisPlayground" />
-        <activity android:name=".ContentViewActivity" />
     </application>
 
 </manifest>

@@ -6,7 +6,7 @@ import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
-import me.drakeet.multitype.ItemViewBinder
+import com.drakeet.multitype.ItemViewBinder
 
 abstract class ItemViewBinding<T, B : ViewDataBinding> : ItemViewBinder<T, ViewBindingHolder<B>>() {
 
