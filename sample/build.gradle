@@ -17,53 +17,45 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion buildConfig.compileSdkVersion
+  compileSdkVersion buildConfig.compileSdkVersion
 
-    dataBinding {
-        enabled = true
-    }
+  defaultConfig {
+    applicationId "me.drakeet.multitype.sample"
+    minSdkVersion buildConfig.minSdkVersion
+    targetSdkVersion buildConfig.targetSdkVersion
+    versionCode buildConfig.versionCode
+    versionName buildConfig.versionName
+    testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+  }
 
-    defaultConfig {
-        applicationId "com.drakeet.multitype.sample"
-        minSdkVersion buildConfig.minSdkVersion
-        targetSdkVersion buildConfig.targetSdkVersion
-        versionCode buildConfig.versionCode
-        versionName buildConfig.versionName
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
     }
+  }
 
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
 
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-
-    sourceSets {
-        main.java.srcDirs += 'src/main/kotlin'
-        androidTest.java.srcDirs += 'src/androidTest/kotlin'
-    }
+  sourceSets {
+    main.java.srcDirs += 'src/main/kotlin'
+    androidTest.java.srcDirs += 'src/androidTest/kotlin'
+  }
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
-    implementation project(':library')
-    implementation project(':library-databinding')
-    implementation 'androidx.appcompat:appcompat:1.1.0-alpha05'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-    androidTestImplementation 'androidx.test:rules:1.2.0'
-    androidTestImplementation "androidx.annotation:annotation:$annotationVersion"
-    androidTestImplementation "com.google.truth:truth:0.42"
-    implementation "androidx.appcompat:appcompat:$appcompatVersion"
-    implementation "androidx.recyclerview:recyclerview:$recyclerviewVersion"
-    implementation 'com.google.code.gson:gson:2.8.5'
+  implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+  implementation project(':library')
+  androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+  androidTestImplementation 'androidx.test:rules:1.3.0'
+  androidTestImplementation "androidx.annotation:annotation:$annotationVersion"
+  androidTestImplementation "com.google.truth:truth:1.0"
+  implementation "androidx.appcompat:appcompat:$appcompatVersion"
+  implementation "androidx.recyclerview:recyclerview:$recyclerviewVersion"
+  implementation 'com.google.code.gson:gson:2.8.6'
 }
