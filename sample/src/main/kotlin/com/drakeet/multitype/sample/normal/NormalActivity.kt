@@ -28,25 +28,24 @@ import java.util.*
  */
 class NormalActivity : MenuBaseActivity() {
 
-  private lateinit var adapter: MultiTypeAdapter
-  private lateinit var items: MutableList<Any>
+  private val adapter = MultiTypeAdapter()
+  private val items = ArrayList<Any>()
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_list)
     val recyclerView = findViewById<RecyclerView>(R.id.list)
 
-    adapter = MultiTypeAdapter()
     adapter.register(TextItemViewBinder())
     adapter.register(ImageItemViewBinder())
-    adapter.register(RichItemViewBinder())
+    // ✨✨✨
+    adapter.register(RichViewDelegate())
     recyclerView.adapter = adapter
 
     val textItem = TextItem("world")
     val imageItem = ImageItem(R.mipmap.ic_launcher)
     val richItem = RichItem("小艾大人赛高", R.drawable.img_11)
 
-    items = ArrayList()
     for (i in 0..19) {
       items.add(textItem)
       items.add(imageItem)

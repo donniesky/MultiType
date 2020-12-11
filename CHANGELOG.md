@@ -1,5 +1,25 @@
 # MultiType Releases
 
+### Version 4.2.0 - Dec 24, 2019
+
+- Add `ViewDelegate` that does not require `ViewHolder` (#296)
+
+### Version 4.1.1 - Dec 11, 2019
+
+- Fix binary incompatibility about `ItemViewBinder` (#294)
+
+### Version 4.1.0 - Dec 9, 2019
+
+- Add `ItemViewDelegate` & `onCreateViewHolder(context, _)` (#292)
+- Kotlin 1.3.61
+
+### Version 4.0.0 - Sep 7, 2019
+
+- Migrate to com.drakeet group (#267)
+- Kotlin 1.3.50
+- AndroidX Annotation 1.1.0
+- Fix duplicate library_release.kotlin_module (#284)
+
 ### Version 4.0.0-alpha3 - Mar 16, 2019
 
 - Change `TypePool` to `Types`
